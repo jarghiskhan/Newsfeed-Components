@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Chippy Chawa',
+    date: 'Jan 1st, 2020',
+    firstParagraph: `Boogy Wooyg `,
+
+    secondParagraph: `Poppposdfas lkasjdflkajsflk aslkfdj alksjdflka;sdjf ;lkasjdfl; aksjdflk;asj dflkajsdf;lkajs fkasj f`,
+
+    thirdParagraph: `laksdjflkasfk lkajsdlf;kja lsd;kfj alksdfj lkasjflkasj flkajs f;laj flksajdf lkja s;flkjas ldkfjalskdf jlkasdjf `
   }
 ];
 
@@ -102,7 +111,50 @@ const data = [
 
     <span class="expandButton">+</span>
   </div>
+  */
+function articleMaker(articleData){
+  const articleDiv = document.createElement('div');
+  const h2 = document.createElement('h2');
+  const span = document.createElement('span');
+  
+  const pDate = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p');
+  const p3 = document.createElement('p');
 
+
+  articleDiv.appendChild(h2);
+  articleDiv.appendChild(pDate)
+  articleDiv.appendChild(p1);
+  articleDiv.appendChild(p2);
+  articleDiv.appendChild(p3);
+  articleDiv.appendChild(span);
+
+  articleDiv.classList.add('article',"article-closed");
+  pDate.classList.add('date');
+  span.classList.add('expandButton');
+
+
+  h2.textContent=`${articleData.title}`;
+
+  pDate.textContent=`${articleData.date}`
+  p1.textContent=`${articleData.firstParagraph}`;
+  p2.textContent=`${articleData.secondParagraph}`;
+  p3.textContent=`${articleData.thirdParagraph}`;
+
+  span.textContent='\u2795';
+  
+  span.addEventListener('click',()=>{
+    articleDiv.classList.toggle("article-open");
+  });
+  return articleDiv;
+}
+
+data.forEach(element => {
+  const newArticle = articleMaker(element);
+  document.body.append(newArticle);
+});
+/*
   Step 2: Still inside `articleMaker`, add an event listener to the span.expandButton.
   This listener should toggle the class 'article-open' on div.article.
 
