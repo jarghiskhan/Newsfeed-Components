@@ -86,6 +86,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Chippy Chawa',
+    date: 'Jan 1st, 2020',
+    firstParagraph: `Boogy Wooyg `,
+
+    secondParagraph: `Poppposdfas lkasjdflkajsflk aslkfdj alksjdflka;sdjf ;lkasjdfl; aksjdflk;asj dflkajsdf;lkajs fkasj f`,
+
+    thirdParagraph: `laksdjflkasfk lkajsdlf;kja lsd;kfj alksdfj lkasjflkasj flkajs f;laj flksajdf lkja s;flkjas ldkfjalskdf jlkasdjf `
   }
 ];
 
@@ -112,6 +121,7 @@ function articleMaker(articleData){
   const p1 = document.createElement('p');
   const p2 = document.createElement('p');
   const p3 = document.createElement('p');
+
 
   articleDiv.appendChild(h2);
   articleDiv.appendChild(pDate)
